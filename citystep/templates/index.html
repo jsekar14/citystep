@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block title %} Holdings {% endblock %} {% block main %}
+<h1>Activity History</h1>
+<!-- credit to https://www.w3schools.com/w3css/w3css_icons.asp for help with finding icons-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<table class="table table-striped">
+    <thead>
+        <tr class="table-danger">
+            <th>Name</th>
+            <th>Occasion</th>
+            <th>Date Last Modified</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tfoot>
+        {% for row in info%}
+                <tr>
+
+                    <td>{{row.activity}}</td>
+                    <td></td>
+                    <td></td>
+                    <td><a href="/edit/{{row.name}}"><span class="fa fa-pencil"></span></a></td>
+                    <td><a href="/delete/{{row.name}}"><span class="fa fa-trash"></span></a></td>
+                </tr>
+
+            {% endfor %}
+    </tfoot>
+
+
+
+
+</table>
+{% endblock %}

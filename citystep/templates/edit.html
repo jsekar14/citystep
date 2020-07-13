@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Existing Profile
+{% endblock %}
+
+{% block main %}
+<h1> Edit {{a['first']}}'s Profile </h1>
+<form action="/edit/name" method="post">
+    <h3> Demographic Information </h3>
+    <div class="form-row">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="">Name</span>
+             </div>
+            <input type="text" class="form-control" name="first" value="{{a['first']}}" readonly>
+            <input type="text" class="form-control" name="last" value="{{a['last']}}" readonly>
+        </div>
+    </div>
+    <p></p>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="age">Age Range</label>
+        <select class="form-control" name="age">
+            <option selected value="{{a['age']}}">{{a['age']}}</option>
+            <option value="0-2">0-2</option>
+            <option value="3-5">3-5</option>
+            <option value="5-10">5-10</option>
+            <option value="10-15">10-15</option>
+            <option value="15-20">15-20</option>
+            <option value="20-30">20-30</option>
+            <option value="30-50">30-50</option>
+            <option value="50-70">50-70</option>
+            <option value="70+">70+</option>
+        </select>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label for="gender">Gender</label>
+      <select class="form-control" name="Gender">
+                <option selected value="{{a['gender']}}">{{a['gender']}}</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+    </div>
+
+  </div>
+  <div class="form-group">
+        <label for="relation">Relation</label>
+            <select class="form-control" name="relation">
+                <option selected value="{{a['relation']}}">{{a['relation']}}</option>
+                <option value="Best Friend">Best Friend</option>
+                <option value="Friend">Friend</option>
+                <option value="Mother">Mother</option>
+                <option value="Father">Father</option>
+                <option value="Daughter">Daughter</option>
+                <option value="Son">Son</option>
+                <option value="Sister">Sister</option>
+                <option value="Brother">Brother</option>
+                <option value="Girlfriend/Wife">Girlfriend/Wife</option>
+                <option value="Boyfriend">Boyfriend</option>
+                <option value="Grandma">Grandma</option>
+                <option value="Grandpa">Grandpa</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Other Family Member">Other Family Member</option>
+                <option value="Other">Other</option>
+            </select>
+    </div>
+  <h3> Gift-Specific Information </h3>
+    <div class="form-group">
+        <label for="occasion">Occasion</label>
+        <select class="form-control" name="occasion">
+            <option selected = "selected" value="{{a['occasion']}}">{{a['occasion']}}</option>
+            <option value="Anniversary">Anniversary</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Christmas">Christmas</option>
+            <option value="Congratulations">Congratulations</option>
+            <option value="Pick-me-up">Pick-me-up</option>
+            <option value="Thank You">Thank You</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    </div>
+    <div class="input-group">
+    <div class="input-group-prepend">
+         <span class="input-group-text" id="">Price
+    </div>
+        <textarea input type="integer" class="form-control" name="min"> {{a['price_min']}}</textarea>
+        <textarea input type="integer" class="form-control" name="max"> {{a['price_max']}}</textarea>
+    </div>
+
+<button class="btn btn-outline-success btn-lg" type="submit">Submit!</button>
+</form>
+{% endblock %}

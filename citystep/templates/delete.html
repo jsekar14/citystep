@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete ((row.name))'s profile?
+{% endblock %}
+
+{% block main %}
+    <h1>Are you sure you want to delete ((person))'s profile? </h1>
+    <form action="/delete" method="post">
+    <div class="form-check">
+        <input type="radio" class="form-check-input" id="yes" name="yes">
+          <label class="form-check-label" for="yes">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" class="form-check-input" id="no" name="no">
+        <label class="form-check-label" for="no">No</label>
+    </div>
+    <p></p>
+    <button class="btn btn-outline-success btn-lg" type="submit">Sell</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Holdings
+{% endblock %}
+
+{% block main %}
+    <h1>Activities for You</h1>
+    <!-- credit to https://www.w3schools.com/w3css/w3css_icons.asp for help with finding icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <form action="/profile" method="post">
+        <p>Pick an Activity:</p>
+        <select name="activity" multiple>
+            {% for row in a%}
+                <td>
+                    <option value ="{{row.name}}">{{row.name}}</option>
+                </td>
+            {% endfor %}
+
+        </select>
+        <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+
+
+
+    </table>
+{% endblock %}
